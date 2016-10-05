@@ -53,7 +53,7 @@ class TableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SongCell
         
-        cell.backgroundColor = UIColor.gray
+        cell.backgroundColor = UIColor.changeColors()
 
         let song = thrillerAlbum[indexPath.row]
         
@@ -64,4 +64,15 @@ class TableViewController: UITableViewController {
     }
  
 
+}
+
+extension UIColor {
+    class func changeColors() -> UIColor {
+
+        let red: CGFloat = CGFloat(drand48())
+        let blue: CGFloat = CGFloat(drand48())
+        let green: CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
 }
